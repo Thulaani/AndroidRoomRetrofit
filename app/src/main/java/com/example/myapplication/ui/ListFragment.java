@@ -97,9 +97,9 @@ public class ListFragment extends Fragment {
                     arrayList= (ArrayList<Hero>) response.body();
                     dao.OnCreateHero(arrayList);
 
-//                    for(Hero item: response.body()){
-//
-//                    }
+                    for(Hero item: response.body()){
+
+                    }
 
                 }
 
