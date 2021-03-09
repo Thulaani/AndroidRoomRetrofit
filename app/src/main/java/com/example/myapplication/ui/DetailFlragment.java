@@ -40,7 +40,6 @@ public class DetailFlragment extends Fragment {
             onDisplay(hero);
         }
     }
-    
 
     void onDisplay(Hero hero) {
         binding.txtId.setText(String.valueOf(hero.getId()));
