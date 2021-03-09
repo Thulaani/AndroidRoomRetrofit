@@ -14,13 +14,13 @@ import com.example.myapplication.model.Hero;
 
 public class DetailFlragment extends Fragment {
 
-private FragmentDetailFlragmentBinding binding;
+    private FragmentDetailFlragmentBinding binding;
 
 
     @Override
-    public View onCreateView (LayoutInflater inflater,
-                              ViewGroup container,
-                              Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater,
+                             ViewGroup container,
+                             Bundle savedInstanceState) {
         binding = FragmentDetailFlragmentBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
 
@@ -33,22 +33,25 @@ private FragmentDetailFlragmentBinding binding;
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        if(getArguments() != null){
+        if (getArguments() != null) {
             DetailFlragmentArgs args = DetailFlragmentArgs.fromBundle(getArguments());
 
             Hero hero = args.getHero();
             onDisplay(hero);
         }
     }
-void onDisplay(Hero hero){
+    
+
+    void onDisplay(Hero hero) {
         binding.txtId.setText(String.valueOf(hero.getId()));
         binding.txtUserTitle.setText(String.valueOf(hero.getTitle()));
         binding.txtUserBody.setText(String.valueOf(hero.getBody()));
-}
+    }
+
     @Override
     public void onResume() {
         super.onResume();
 
-       // Toast.makeText(getActivity(), hero.getTitle() + " \n" + "Test", Toast.LENGTH_LONG).show();
+        // Toast.makeText(getActivity(), hero.getTitle() + " \n" + "Test", Toast.LENGTH_LONG).show();
     }
 }
